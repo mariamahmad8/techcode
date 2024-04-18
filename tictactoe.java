@@ -112,6 +112,9 @@ public class tictactoe extends GameActivity{
         randomButton.setText("O");
         randomButton.setEnabled(false); // disalb eit
         enabledCount ++;
+        if(isBoardFull()){
+            System.out.println("poo");
+        }
         // check if computer wins or if board is full and if its sint then its the user turns
         if (!checkForWin() && !isBoardFull()) {
             computerTurn = false;
@@ -120,7 +123,7 @@ public class tictactoe extends GameActivity{
     }
 
     public boolean checkForWin() {
-        // Define winning combinations
+
         int[][] winCombinations = {
                 {0, 1, 2}, {3, 4, 5}, {6, 7, 8}, // teh rwos
                 {0, 3, 6}, {1, 4, 7}, {2, 5, 8}, // the cols
